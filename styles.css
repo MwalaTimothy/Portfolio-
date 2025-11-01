@@ -622,6 +622,183 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.5rem;
 }
 
+/* Carenuity Section */
+.carenuity-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.carenuity-card {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: var(--shadow-xl);
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carenuity-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.05), transparent);
+    border-radius: 50%;
+}
+
+.carenuity-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.carenuity-logo svg {
+    width: 80px;
+    height: 80px;
+}
+
+.carenuity-info h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.carenuity-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.carenuity-link {
+    margin-top: 1rem;
+}
+
+.carenuity-description {
+    margin-bottom: 2.5rem;
+}
+
+.carenuity-description h4 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.carenuity-description p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.carenuity-ecosystems, 
+.carenuity-microcontrollers, 
+.carenuity-specialization {
+    margin-bottom: 2.5rem;
+}
+
+.carenuity-ecosystems h4,
+.carenuity-microcontrollers h4,
+.carenuity-specialization h4 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.ecosystem-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.ecosystem-item:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(59, 130, 246, 0.05);
+    transform: translateY(-2px);
+}
+
+.ecosystem-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.ecosystem-item span {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.microcontroller-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.micro-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.micro-tag:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.specialization-list {
+    list-style: none;
+    padding: 0;
+}
+
+.specialization-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.specialization-list li:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+    transform: translateX(5px);
+}
+
+.specialization-list li i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
 /* Projects Section */
 .projects {
     padding: 6rem 0;
@@ -1035,6 +1212,28 @@ h1, h2, h3, h4, h5, h6 {
 
     .academic-competencies {
         padding: 1.5rem;
+    }
+
+    .carenuity-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .carenuity-card {
+        padding: 2rem;
+    }
+
+    .ecosystem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .microcontroller-tags {
+        justify-content: center;
+    }
+
+    .carenuity-info h3 {
+        font-size: 1.5rem;
     }
 }
 

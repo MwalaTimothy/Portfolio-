@@ -58,8 +58,9 @@ Timothy's academic excellence has evolved into specialized industry expertise ac
 
 - **Multi-Platform Proficiency**: ESP32, ESP8266, STM32, Raspberry Pi, Raspberry Pi Pico, Arduino
 - **Advanced Integration**: Hardware-firmware-cloud technology synthesis
-- **Leadership Roles**: AI Team Lead positions at ChipGlobe and SmartSync Innovations  
-- **Innovation Focus**: Smart device engineering and advanced IoT ecosystem development
+- **Leadership Roles**: AI Team Lead at ChipGlobe GmbH and featured developer on Carenuity platform
+- **Innovation Focus**: Smart environmental monitoring, Matter-compatible devices, and advanced IoT ecosystems
+- **Platform Presence**: [Featured Developer Profile on Carenuity Solutions](https://solutions.carenuity.com/developers/f3044862-60f1-7098-edf6-f3a24c72079c)
 
 #### 📈 **Continuous Learning Philosophy**
 
@@ -69,9 +70,32 @@ The Master's degree foundation enables Timothy to:
 - Bridge theoretical concepts with practical implementation requirements
 - Lead technical teams with deep domain expertise and academic credibility
 
+#### 🌐 **Carenuity Platform Integration**
+
+Timothy is a **featured developer** on the Carenuity platform (ChipGlobe GmbH), specializing in:
+
+**Environmental Monitoring Solutions**
+- SQ-Panel integration for air quality, temperature, humidity, pressure monitoring
+- CO2 and TVOC sensing with real-time smartphone app connectivity
+- Matter-compatible smart home device development
+
+**IoT Ecosystem Development**
+- Cloudfree Applications architecture
+- Home Assistant integrations
+- Internet App Store solutions
+- Multi-platform microcontroller support (ESP32, ESP32-C3, D1-Mini, Raspberry Pi Pico W)
+
+**Smart Device Engineering**
+- Border Router gateway systems for home network integration
+- Real-time alert systems and threshold management
+- Cloud connectivity solutions and data analytics
+- Cross-platform compatibility (Alexa, Apple Home, Google Home, SmartThings, Home Assistant)
+
+**Developer Profile**: [View on Carenuity Platform](https://solutions.carenuity.com/developers/f3044862-60f1-7098-edf6-f3a24c72079c)
+
 ---
 
-**This portfolio showcases how advanced academic training in Electronics and Instrumentation translates into cutting-edge professional contributions in embedded systems, IoT development, and AI-enhanced device engineering.**
+**This portfolio showcases how advanced academic training in Electronics and Instrumentation translates into cutting-edge professional contributions in embedded systems, IoT development, environmental monitoring solutions, and AI-enhanced device engineering on the Carenuity platform.**
 
 ## 🌐 Live Portfolio
 [View Complete Portfolio](https://mwalatimothy.github.io/Portfolio-)
