@@ -5,11 +5,13 @@ npm-debug.log*
 # Production builds
 dist/
 build/
+_site/
 
 # Environment variables
 .env
 .env.local
 .env.production
+.env.development
 
 # IDE files
 .vscode/
@@ -32,3 +34,27 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Development and documentation files (kept private)
+*SUMMARY.md
+*GUIDE.md
+DEPLOYMENT_*.md
+TIMOTHY_PORTFOLIO_SUMMARY.md
+PORTFOLIO_ENHANCEMENT_SUMMARY.md  
+CARENUITY_INTEGRATION_SUMMARY.md
+
+# Keep source documentation private
+docs/
+notes/
+planning/
+
+# Security sensitive files
+*.key
+*.pem
+*.p12
+secrets/
+
+# Backup files  
+*.bak
+*.backup
+*~
