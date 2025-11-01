@@ -4,7 +4,9 @@ A modern, responsive portfolio website showcasing embedded systems projects, IoT
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://mwalatimothy.github.io/portfolio) *(Will be updated after deployment)*
+[View Live Portfolio](https://mwalatimothy.github.io/Portfolio-) *(Will be live once GitHub Pages is enabled)*
+
+**Repository**: https://github.com/MwalaTimothy/Portfolio-
 
 ## ✨ Features
 
@@ -59,8 +61,8 @@ portfolio/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
+   git clone https://github.com/MwalaTimothy/Portfolio-.git
+   cd Portfolio-
    ```
 
 2. Open `index.html` in your browser or use a local server:
