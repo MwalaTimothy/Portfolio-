@@ -1,10 +1,10 @@
-# Personal Portfolio Website
+# Timothy Mwala - Portfolio Website
 
-A modern, responsive portfolio website showcasing projects, skills, and professional information.
+A modern, responsive portfolio website showcasing embedded systems projects, IoT solutions, and AI expertise.
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://yourusername.github.io/portfolio) *(Update this URL after deployment)*
+[View Live Portfolio](https://mwalatimothy.github.io/portfolio) *(Will be updated after deployment)*
 
 ## ✨ Features
 
@@ -158,9 +158,10 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- **GitHub**: [Your GitHub Profile](https://github.com/yourusername)
+- **Email**: mwalatimo@gmail.com
+- **LinkedIn**: [Timothy Mwala](https://www.linkedin.com/in/timothy-mwala/)
+- **GitHub**: [MwalaTimothy](https://github.com/MwalaTimothy)
+- **Role**: AI Team Lead at ChipGlobe KE
 
 ---
 
