@@ -35,11 +35,18 @@ Thumbs.db
 *.tmp
 *.temp
 
+# Keep ALL files private except TIMOTHY_PORTFOLIO_SUMMARY.md
+index.html
+styles.css
+script.js
+PUBLIC_README.md
+.github/
+
 # Development and documentation files (kept private)
 *SUMMARY.md
+!TIMOTHY_PORTFOLIO_SUMMARY.md
 *GUIDE.md
 DEPLOYMENT_*.md
-TIMOTHY_PORTFOLIO_SUMMARY.md
 PORTFOLIO_ENHANCEMENT_SUMMARY.md  
 CARENUITY_INTEGRATION_SUMMARY.md
 README.md
@@ -49,7 +56,7 @@ deploy.ps1
 docs/
 notes/
 planning/
-images/README.md
+images/
 
 # Security sensitive files
 *.key
