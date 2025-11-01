@@ -39,10 +39,15 @@ jobs:
           cp styles.css _site/
           cp script.js _site/
           
-          # Create images directory and copy any images that exist
+          # Copy public README as the repository README (clean, professional)
+          if [ -f "PUBLIC_README.md" ]; then
+            cp PUBLIC_README.md _site/README.md
+          fi
+          
+          # Create images directory and copy only image files (no documentation)
           mkdir -p _site/images
-          if [ -d "images" ] && [ "$(ls -A images)" ]; then
-            cp images/* _site/images/ 2>/dev/null || true
+          if [ -d "images" ]; then
+            find images -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.svg" -o -name "*.webp" -o -name "*.ico" \) -exec cp {} _site/images/ \; 2>/dev/null || true
           fi
           
           # Create a simple robots.txt for SEO

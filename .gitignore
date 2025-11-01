@@ -42,11 +42,14 @@ DEPLOYMENT_*.md
 TIMOTHY_PORTFOLIO_SUMMARY.md
 PORTFOLIO_ENHANCEMENT_SUMMARY.md  
 CARENUITY_INTEGRATION_SUMMARY.md
+README.md
+deploy.ps1
 
 # Keep source documentation private
 docs/
 notes/
 planning/
+images/README.md
 
 # Security sensitive files
 *.key
