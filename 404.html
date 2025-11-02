@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timothy Mwala - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #f8fafc;
+        }
+        .redirect-message {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-message">
+        <h1>🚀 Portfolio Loading...</h1>
+        <p>If you're not automatically redirected, click below:</p>
+        <a href="./index.html" class="btn">View Portfolio</a>
+        <a href="https://github.com/MwalaTimothy" class="btn">GitHub Profile</a>
+        <a href="https://www.hackster.io/Mwala" class="btn">Hackster.io Profile</a>
+    </div>
+    <script>
+        // Auto redirect to index.html after 2 seconds
+        setTimeout(() => {
+            window.location.href = './index.html';
+        }, 2000);
+    </script>
+</body>
+</html>
