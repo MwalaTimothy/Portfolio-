@@ -35,12 +35,6 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Keep portfolio source files private
-index.html
-script.js
-styles.css
-images/
-
 # Documentation and guide files (keep private)
 *GUIDE.md
 *SUMMARY.md
