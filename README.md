@@ -1,14 +1,14 @@
-# Timothy Mwala - Professional Portfolio
+# Timothy Mwala 
 
-## 🎓 Embedded Systems Engineer | IoT Specialist | M.Sc. Electronics & Communication
+##  Embedded Systems Engineer | IoT Specialist | M.Sc. Electronics & Communication
 
 **Innovative embedded systems developer with expertise in IoT architecture, sensor networks, and intelligent automation solutions.**
 
 ---
 
-## 🏆 Professional Achievements
+## Professional Achievements
 
-### 🎯 **Academic Excellence**
+### **Academic Excellence**
 - **Master of Science (M.Sc.)** - Electronics and Communication Engineering
 - **Specialized Focus**: Embedded Systems Design, IoT Architecture, Sensor Integration
 - **Research Areas**: Environmental Monitoring, Smart Automation, Edge Computing
@@ -19,7 +19,7 @@
 - **⭐ 12+ Open Source Repositories** - ESP32/ESP8266 solutions
 - **🔬 AI Integration Pioneer** - GPT-enhanced environmental monitoring
 
-### 🚀 **Technical Leadership**
+### **Technical Leadership**
 - **Environmental Monitoring Expert**: Advanced sensor fusion and calibration
 - **Smart Home Innovation**: Presence detection and automated control systems
 - **Wireless Communication**: WiFi mesh, Bluetooth beacons, LoRa networks
@@ -27,7 +27,7 @@
 
 ---
 
-## 🌟 Signature Projects Portfolio
+## Signature Projects Portfolio
 
 ### **🔹 ESP32-C3 iBeacon Gateway** 
 Advanced Bluetooth Low Energy gateway with proximity monitoring for indoor positioning
@@ -56,7 +56,7 @@ MICS-6814 sensor integration for CO, NO2, and NH3 gas monitoring applications
 
 ---
 
-## 📞 Professional Contact
+## Contact
 
 **📧 Email**: [mwalatimo@gmail.com](mailto:mwalatimo@gmail.com)  
 **🌐 Portfolio**: [Live Portfolio Website](https://mwalatimothy.github.io/Portfolio-/)  
@@ -65,13 +65,13 @@ MICS-6814 sensor integration for CO, NO2, and NH3 gas monitoring applications
 
 ---
 
-## 🎯 Mission Statement
+## Mission Statement
 
 *"Building intelligent embedded solutions that seamlessly integrate the physical and digital worlds, creating innovative IoT ecosystems that enhance human experience through smart automation and environmental awareness."*
 
 ---
 
-### 📈 Impact Metrics
+### MY Impact Metrics
 - **🔥 1000+ Project Views** across platforms
 - **⭐ Top 5% Contributor** in 3 Hackster.io categories  
 - **🚀 12+ Active Repositories** with continuous updates
