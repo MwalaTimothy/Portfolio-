@@ -1,7 +1,9 @@
-name: Deploy Portfolio to GitHub Pages
+name: Build and Deploy Portfolio to GitHub Pages
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -15,23 +17,86 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Create build directory
+      run: mkdir -p _site
+
+    - name: Process HTML files
+      run: |
+        # Copy main files to build directory
+        cp index.html _site/
+        cp styles.css _site/
+        cp script.js _site/
+        
+        # Create a simple 404 page
+        cat > _site/404.html << 'EOF'
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>404 - Page Not Found | Timothy Mwala</title>
+            <style>
+                body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #1e293b; color: white; }
+                h1 { color: #3b82f6; }
+                a { color: #3b82f6; text-decoration: none; }
+                a:hover { text-decoration: underline; }
+            </style>
+        </head>
+        <body>
+            <h1>404 - Page Not Found</h1>
+            <p>The page you're looking for doesn't exist.</p>
+            <p><a href="/">Return to Portfolio</a></p>
+        </body>
+        </html>
+        EOF
+        
+        # Create robots.txt
+        cat > _site/robots.txt << 'EOF'
+        User-agent: *
+        Allow: /
+        Sitemap: https://mwalatimothy.github.io/Portfolio-/sitemap.xml
+        EOF
+        
+        # Create basic sitemap
+        cat > _site/sitemap.xml << 'EOF'
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <url>
+            <loc>https://mwalatimothy.github.io/Portfolio-/</loc>
+            <lastmod>$(date -u +%Y-%m-%dT%H:%M:%SZ)</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+          </url>
+        </urlset>
+        EOF
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./_site
+
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
