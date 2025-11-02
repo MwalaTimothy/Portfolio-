@@ -35,8 +35,7 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Keep portfolio source files private
-index.html
+# Keep most portfolio source files private  
 script.js
 styles.css
 images/
