@@ -1,7 +1,9 @@
 name: Deploy Portfolio to GitHub Pages
 
 on:
-  workflow_dispatch:  # Manual trigger only
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -13,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -21,41 +23,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Fetch full history
         
-      - name: Restore portfolio files from Git history
-        run: |
-          # Create build directory
-          mkdir -p build
-          
-          # Get the latest commit that had the portfolio files
-          git checkout 4532d5d -- index.html script.js styles.css || echo "Files not found in that commit"
-          
-          # If files exist, copy them to build directory
-          if [ -f "index.html" ]; then
-            cp index.html build/
-            echo "index.html restored"
-          fi
-          if [ -f "script.js" ]; then
-            cp script.js build/
-            echo "script.js restored"
-          fi
-          if [ -f "styles.css" ]; then
-            cp styles.css build/
-            echo "styles.css restored"
-          fi
-          
-          # List contents of build directory
-          ls -la build/
-          
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          path: '.'
           
       - name: Deploy to GitHub Pages
         id: deployment
