@@ -35,13 +35,13 @@ Thumbs.db
 *.tmp
 *.temp
 
-# 🔒 PRIVATE SOURCE FILES - Keep development files hidden
+# helo
 images/
 src/
 docs/
 notes/
 
-# 📝 Documentation and guide files (keep private from public view)
+#  Documentation and guide files (keep private from public view)
 *GUIDE.md
 *SUMMARY.md
 *CHECKLIST.md
@@ -58,7 +58,7 @@ PUBLIC_README.md
 DEVELOPMENT_README.md
 PRIVATE_README.md
 
-# 🔧 Development and build files
+#  Development and build files
 package*.json
 tsconfig.json
 webpack.config.js
@@ -67,7 +67,7 @@ vite.config.js
 .env*
 .config/
 
-# 🎯 Source code protection
+#  Source code protection
 *.source.html
 *.dev.html
 *.source.css
