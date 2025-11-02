@@ -36,6 +36,19 @@ Thumbs.db
 *.temp
 
 
+# Documentation and guide files (keep private)
+*GUIDE.md
+*SUMMARY.md
+*CHECKLIST.md
+*CONFIG.md
+*SUCCESS.md
+EMAIL_SETUP_GUIDE.md
+DEPLOYMENT_*.md
+TIMOTHY_PORTFOLIO_SUMMARY.md
+CARENUITY_INTEGRATION_SUMMARY.md
+PORTFOLIO_ENHANCEMENT_SUMMARY.md
+PUBLIC_README.md
+
 # Security sensitive files
 *.key
 *.pem
