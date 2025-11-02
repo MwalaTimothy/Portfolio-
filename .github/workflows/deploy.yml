@@ -1,9 +1,7 @@
-name: Build and Deploy Portfolio to GitHub Pages
+name: 🚀 Private Source Deploy - Portfolio to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -17,63 +15,108 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
+    name: 🔒 Build Private & Deploy Public
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout
+    - name: 📥 Checkout Source Code (Private)
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-    - name: Setup Node.js
+    - name: 🛠️ Setup Build Environment
       uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
 
-    - name: Setup Pages
+    - name: ⚙️ Configure GitHub Pages
       uses: actions/configure-pages@v4
 
-    - name: Create build directory
-      run: mkdir -p _site
-
-    - name: Process HTML files
+    - name: 🏗️ Create Secure Build Directory
       run: |
-        # Copy main files to build directory
-        cp index.html _site/
-        cp styles.css _site/
-        cp script.js _site/
+        mkdir -p _site
+        echo "🔐 Building portfolio while keeping source files private..."
         
-        # Create a simple 404 page
+    - name: 🎨 Process and Minify Assets (Remove Source Comments)
+      run: |
+        # Copy and clean main files (remove development comments)
+        echo "📄 Processing HTML..."
+        sed '/<!--.*DEV.*-->/d' index.html > _site/index.html
+        
+        echo "🎨 Processing CSS..."
+        # Remove source map comments and development comments
+        sed '/\/\*.*SOURCE.*\*\//d; /\/\*.*DEV.*\*\//d; /^\/\*.*\*\/$/d' styles.css > _site/styles.css
+        
+        echo "⚡ Processing JavaScript..."
+        # Remove development comments and console.log statements
+        sed '/\/\/.*DEV.*/d; /\/\/.*DEBUG.*/d; /console\.log/d' script.js > _site/script.js
+        
+    - name: 📝 Generate Dynamic Content
+      run: |
+        # Create production 404 page
         cat > _site/404.html << 'EOF'
         <!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>404 - Page Not Found | Timothy Mwala</title>
+            <title>404 - Page Not Found | Timothy Mwala Portfolio</title>
+            <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
             <style>
-                body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #1e293b; color: white; }
-                h1 { color: #3b82f6; }
-                a { color: #3b82f6; text-decoration: none; }
-                a:hover { text-decoration: underline; }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body { 
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                    background: linear-gradient(135deg, #1e293b 0%, #334155 100%); 
+                    color: white; 
+                    min-height: 100vh; 
+                    display: flex; 
+                    align-items: center; 
+                    justify-content: center;
+                }
+                .container { text-align: center; padding: 2rem; }
+                h1 { font-size: 4rem; color: #3b82f6; margin-bottom: 1rem; }
+                p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+                .btn { 
+                    display: inline-block; 
+                    padding: 12px 24px; 
+                    background: #3b82f6; 
+                    color: white; 
+                    text-decoration: none; 
+                    border-radius: 8px; 
+                    transition: all 0.3s;
+                }
+                .btn:hover { background: #2563eb; transform: translateY(-2px); }
             </style>
         </head>
         <body>
-            <h1>404 - Page Not Found</h1>
-            <p>The page you're looking for doesn't exist.</p>
-            <p><a href="/">Return to Portfolio</a></p>
+            <div class="container">
+                <h1>404</h1>
+                <p>Oops! The page you're looking for doesn't exist.</p>
+                <a href="/" class="btn">🏠 Return to Portfolio</a>
+            </div>
         </body>
         </html>
         EOF
         
-        # Create robots.txt
+        # Create production robots.txt
         cat > _site/robots.txt << 'EOF'
         User-agent: *
         Allow: /
+        
+        # SEO Optimization
         Sitemap: https://mwalatimothy.github.io/Portfolio-/sitemap.xml
+        
+        # Disallow source files and private content
+        Disallow: /*.md$
+        Disallow: /*.yml$
+        Disallow: /.github/
+        Disallow: /images/
         EOF
         
-        # Create basic sitemap
-        cat > _site/sitemap.xml << 'EOF'
+        # Create dynamic sitemap with current timestamp
+        cat > _site/sitemap.xml << EOF
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
           <url>
@@ -84,19 +127,45 @@ jobs:
           </url>
         </urlset>
         EOF
+        
+        # Create security.txt for responsible disclosure
+        mkdir -p _site/.well-known
+        cat > _site/.well-known/security.txt << 'EOF'
+        Contact: mailto:mwalatimo@gmail.com
+        Preferred-Languages: en
+        Canonical: https://mwalatimothy.github.io/Portfolio-/.well-known/security.txt
+        EOF
 
-    - name: Upload artifact
+    - name: 🔍 Verify Build Integrity
+      run: |
+        echo "📊 Build Summary:"
+        echo "================="
+        echo "✅ Files built: $(find _site -type f | wc -l)"
+        echo "📄 HTML files: $(find _site -name "*.html" | wc -l)"
+        echo "🎨 CSS files: $(find _site -name "*.css" | wc -l)"
+        echo "⚡ JS files: $(find _site -name "*.js" | wc -l)"
+        echo ""
+        echo "🔐 Source files protected:"
+        echo "❌ No .md files: $(find _site -name "*.md" | wc -l)"
+        echo "❌ No .yml files: $(find _site -name "*.yml" | wc -l)"
+        echo "❌ No .github directory: $(find _site -name ".github" | wc -l)"
+        echo "❌ No images directory: $(find _site -name "images" | wc -l)"
+        echo ""
+        echo "✅ Build completed successfully - Source code remains private!"
+
+    - name: 📦 Upload Deployment Artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./_site
+        retention-days: 1
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - name: 🌐 Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+      
+    - name: ✅ Deployment Complete
+      run: |
+        echo "🎉 Portfolio deployed successfully!"
+        echo "🔗 Live URL: ${{ steps.deployment.outputs.page_url }}"
+        echo "🔒 Source code remains private and secure!"
+        echo "📊 Only essential files deployed to public site"

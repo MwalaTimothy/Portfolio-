@@ -35,21 +35,47 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Keep documentation and guide files private  
+# 🔒 PRIVATE SOURCE FILES - Keep development files hidden
 images/
+src/
+docs/
+notes/
 
-# Documentation and guide files (keep private)
+# 📝 Documentation and guide files (keep private from public view)
 *GUIDE.md
 *SUMMARY.md
 *CHECKLIST.md
 *CONFIG.md
 *SUCCESS.md
+*NOTES.md
+*PRIVATE.md
 EMAIL_SETUP_GUIDE.md
 DEPLOYMENT_*.md
 TIMOTHY_PORTFOLIO_SUMMARY.md
 CARENUITY_INTEGRATION_SUMMARY.md
 PORTFOLIO_ENHANCEMENT_SUMMARY.md
 PUBLIC_README.md
+DEVELOPMENT_README.md
+PRIVATE_README.md
+
+# 🔧 Development and build files
+package*.json
+tsconfig.json
+webpack.config.js
+rollup.config.js
+vite.config.js
+.env*
+.config/
+
+# 🎯 Source code protection
+*.source.html
+*.dev.html
+*.source.css
+*.dev.css
+*.source.js
+*.dev.js
+*.map
+*.source.map
 
 # Security sensitive files
 *.key
