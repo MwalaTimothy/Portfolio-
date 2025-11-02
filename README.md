@@ -13,7 +13,7 @@
 - **Specialized Focus**: Embedded Systems Design, IoT Architecture, Sensor Integration
 - **Research Areas**: Environmental Monitoring, Smart Automation, Edge Computing
 
-### 📊 **Industry Recognition**
+### **Industry Recognition**
 - **🌟 Hackster.io Top 5% Contributor** - IoT, Home Automation, Astronomy
 - **📈 32+ Published Projects** with 1000+ combined views
 - **⭐ 12+ Open Source Repositories** - ESP32/ESP8266 solutions
