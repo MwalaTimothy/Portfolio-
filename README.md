@@ -1,6 +1,6 @@
 # Timothy Mwala 
 
-##  Embedded Systems Engineer | IoT Specialist | M.Sc. Electronics & Communication
+##  Embedded Systems Engineer | IoT Specialist | M.Sc. Electronics & Instrumentation
 
 **Innovative embedded systems developer with expertise in IoT architecture, sensor networks, and intelligent automation solutions.**
 
