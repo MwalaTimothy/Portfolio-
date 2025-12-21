@@ -9,7 +9,7 @@
 ## Professional Achievements
 
 ### **Academic Excellence**
-- **Master of Science (M.Sc.)** - Electronics and Communication Engineering
+- **Master of Science (M.Sc.)** - Electronics and Instrumentation 
 - **Specialized Focus**: Embedded Systems Design, IoT Architecture, Sensor Integration
 - **Research Areas**: Environmental Monitoring, Smart Automation, Edge Computing
 
