@@ -568,6 +568,62 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
+/* Infineon Hardware Section */
+.infineon-section {
+    padding: 6rem 0;
+    background-color: var(--bg-secondary);
+}
+
+.hardware-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hardware-card {
+    background-color: var(--bg-primary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.hardware-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.hardware-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.hardware-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hardware-list li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.hardware-list li:last-child {
+    border-bottom: none;
+}
+
+.hardware-list li:before {
+    content: "• ";
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
 /* GitHub Section */
 .github-section {
     padding: 6rem 0;
