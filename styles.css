@@ -624,6 +624,74 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0.5rem;
 }
 
+/* YouTube Channel Section */
+.youtube-section {
+    padding: 6rem 0;
+    background-color: var(--bg-secondary);
+}
+
+.youtube-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.youtube-card {
+    background-color: var(--bg-primary);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    max-width: 600px;
+    text-align: center;
+    transition: var(--transition);
+    border-top: 4px solid #ff0000;
+}
+
+.youtube-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.youtube-header {
+    margin-bottom: 1.5rem;
+}
+
+.youtube-header h3 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+.youtube-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.youtube-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature {
+    background-color: var(--bg-secondary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.feature:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 /* GitHub Section */
 .github-section {
     padding: 6rem 0;
