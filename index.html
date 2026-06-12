@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timothy Mwala - Embedded Systems & Edge AI Researcher | Real-Time IoT Systems</title>
-    <meta name="description" content="Portfolio of Timothy Mwala - Embedded Systems & Edge AI Researcher specializing in Real-Time IoT Systems and Intelligent Sensing. Team Lead at ChipGlobe KE, featured on Carenuity platform with expertise in edge AI, environmental monitoring, and data processing.">
+    <title>Timothy Mwala - Embedded Systems, Edge AI & IoT Portfolio</title>
+    <meta name="description" content="Career portfolio of Timothy Mwala, an Embedded Systems and Edge AI Engineer building intelligent connected products across firmware, IoT, PCB design, sensor integration, and cloud-connected smart devices.">
     
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="Timothy Mwala, Embedded Systems, IoT Developer, ESP32, Team Lead, ChipGlobe, Carenuity, Environmental Monitoring, Smart Home, Matter Protocol, Electronics Engineer">
@@ -13,18 +13,18 @@
     <link rel="canonical" href="https://mwalatimothy.github.io/Portfolio-/">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Timothy Mwala - Embedded Systems & Edge AI Researcher">
-    <meta property="og:description" content="Real-Time IoT Systems | Intelligent Sensing & Data Processing | Featured on Carenuity | Team Lead at ChipGlobe KE">
-    <meta property="og:image" content="https://github.com/MwalaTimothy.png">
+    <meta property="og:title" content="Timothy Mwala - Embedded Systems & Edge AI Engineer">
+    <meta property="og:description" content="Firmware, IoT systems, PCB design, sensor integration, Matter-enabled devices, smart sensing, and edge AI applications.">
+    <meta property="og:image" content="images/og.webp">
     <meta property="og:url" content="https://mwalatimothy.github.io/Portfolio-/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Timothy Mwala Portfolio">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Timothy Mwala - Edge AI & IoT Researcher">
-    <meta name="twitter:description" content="Real-Time Systems | Intelligent Sensing | Edge AI | Featured on Carenuity Platform">
-    <meta name="twitter:image" content="https://github.com/MwalaTimothy.png">
+    <meta name="twitter:title" content="Timothy Mwala - Embedded Systems & Edge AI Engineer">
+    <meta name="twitter:description" content="Building intelligent connected products across firmware, IoT, sensors, PCB design, and edge AI.">
+    <meta name="twitter:image" content="images/og.webp">
     <meta name="twitter:site" content="@SpaceX_Json">
     
     <!-- Security Headers -->
@@ -35,14 +35,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://github.com/MwalaTimothy.png">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49FV02S1M5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-49FV02S1M5');
-    </script>
+        <!-- Google Analytics (loaded after consent) -->
+        <!-- GA will be loaded only after user consents via the cookie banner -->
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,13 +47,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="skip-link" href="#main-content" aria-label="Skip to main content">Skip to content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="#home">Timothy Mwala</a>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="primary-navigation">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
@@ -76,7 +71,7 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="nav-toggle" id="mobile-menu">
+            <div class="nav-toggle" id="mobile-menu" role="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -85,28 +80,35 @@
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Hi, I'm <span class="text-primary">Timothy Mwala</span>
+                    Hi, I'm Timothy Mwala.
                 </h1>
-                <p class="hero-subtitle">Embedded Systems & Edge AI Researcher | Real-Time IoT Systems | Intelligent Sensing & Data Processing | Team Lead</p>
+                <p class="hero-subtitle">Embedded Systems and Edge AI Engineer building intelligent connected products</p>
                 <p class="hero-description">
-                    Designing real-time IoT systems with intelligent sensing and advanced data processing capabilities. 
-                    Specializing in edge AI solutions for embedded platforms, environmental monitoring systems, and 
-                    smart device architectures across ESP32, STM32, Infineon XMC series MCU, and Raspberry Pi ecosystems.
+                    I work across embedded firmware, IoT systems, PCB design, sensor integration, edge machine learning,
+                    and cloud-connected smart devices. My projects connect ESP32, STM32, Home Assistant,
+                    Matter-enabled systems, industrial monitoring, smart sensing, and edge AI into practical products
+                    that move beyond prototypes and deliver measurable impact.
                 </p>
+                <div class="hero-proof" aria-label="Career focus">
+                    <span><i class="fas fa-shield-alt"></i> Reliable firmware</span>
+                    <span><i class="fas fa-drafting-compass"></i> PCB and product thinking</span>
+                    <span><i class="fas fa-brain"></i> Edge AI deployment</span>
+                </div>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#hackster" class="btn btn-secondary">View Projects</a>
+                    <a href="#projects" class="btn btn-primary">See Case Studies</a>
+                    <a href="#contact" class="btn btn-secondary">Start a Conversation</a>
                 </div>
                 <div class="hero-sponsor">
                     <iframe src="https://github.com/sponsors/MwalaTimothy/button" title="Sponsor MwalaTimothy" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://github.com/MwalaTimothy.png" alt="Timothy Mwala Profile Picture" class="profile-img">
+                <div class="hero-image">
+                <img src="images/avatar.webp" alt="Timothy Mwala Profile Picture" class="profile-img" width="350" height="350" loading="lazy">
             </div>
         </div>
     </section>
@@ -196,14 +198,27 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Embedded Systems Developer and Team Lead at ChipGlobe KE with dual expertise: Bachelor of Education in Science, Mathematics, and Physics, 
-                        and Master's degree in Electronics and Instrumentation. This unique combination enables me to bridge technical complexity with clear communication, 
-                        mentor high-performing teams, and drive innovation in IoT and smart device engineering.
+                        I'm an Embedded Systems and Edge AI Engineer focused on turning ideas into intelligent,
+                        connected products. My work spans embedded firmware, IoT systems, PCB design, sensor
+                        integration, edge machine learning, and cloud-connected smart devices.
                     </p>
                     <p>
-                        Specialized in microcontroller platforms (ESP32, ESP8266, STM32, Raspberry Pi, Arduino) and Infineon XENSIV™ sensors. Strong background in 
-                        signal processing, control systems, and edge AI development. Active in STEM mentorship, embedded systems developer mentorship, and university 
-                        IoT outreach initiatives.
+                        I build across the full hardware-software stack, from ESP32 and STM32 platforms to
+                        Home Assistant integrations, Matter-enabled devices, industrial monitoring systems,
+                        smart sensing solutions, and AI-assisted edge applications. I enjoy bridging electronics,
+                        firmware, data, and product thinking to create systems that are practical, reliable,
+                        and measurable in the real world.
+                    </p>
+                    <p>
+                        Beyond engineering, I mentor students, developers, and innovators, helping connect
+                        academic learning with hands-on product development. My broader vision is to accelerate
+                        innovation in Africa through practical engineering, intelligent devices, and accessible
+                        technology education.
+                    </p>
+                    <p>
+                        Whether I am designing a custom PCB, developing an IoT ecosystem, deploying edge AI
+                        models, or building next-generation smart products, I care about solving real problems
+                        with technology that works beyond the prototype stage.
                     </p>
                     <div class="about-stats">
                         <div class="stat">
@@ -527,7 +542,7 @@
                             <span>AI & Edge Computing</span>
                         </div>
                     </div>
-                    <a href="https://www.youtube.com/@Smartsyncinnovations" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem;">
+                    <a href="https://www.youtube.com/@Smartsyncinnovations" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1.5rem;">
                         Subscribe on YouTube
                     </a>
                 </div>
@@ -542,14 +557,14 @@
             <div class="github-stats">
                 <div class="github-card">
                     <div class="github-header">
-                        <img src="https://github.com/MwalaTimothy.png" alt="GitHub Avatar" class="github-avatar">
+                        <img src="images/avatar.webp" alt="GitHub Avatar" class="github-avatar" width="120" height="120" loading="lazy">
                         <div class="github-info">
                             <h3>MwalaTimothy</h3>
                             <p>M.Sc. Electronics & Instrumentation | Mathematician & Physicist turned Embedded Systems Developer. 
                             Specializing in AI-enabled IoT systems, radar/sensor integration, and smart device development across 
                             ESP32/ESP8266, STM32, Raspberry Pi platforms. 20+ repositories showcasing embedded solutions.</p>
                             <div class="github-links">
-                                <a href="https://github.com/MwalaTimothy" target="_blank" class="btn btn-secondary">
+                                <a href="https://github.com/MwalaTimothy" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                                     <i class="fab fa-github"></i> View Profile
                                 </a>
                                 <a href="mailto:mwalatimo@gmail.com" class="btn btn-primary">
@@ -584,7 +599,7 @@
                             <p class="carenuity-subtitle">Carenuity Solutions Platform | ChipGlobe GmbH</p>
                             <div class="carenuity-link">
                                 <a href="https://solutions.carenuity.com/developers/f3044862-60f1-7098-edf6-f3a24c72079c" 
-                                   target="_blank" class="btn btn-primary">
+                                   target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                                     <i class="fas fa-external-link-alt"></i> View Developer Profile
                                 </a>
                             </div>
@@ -653,18 +668,55 @@
         <div class="container">
             <div class="projects-header">
                 <h2 class="section-title">Featured Projects</h2>
-                <a href="https://github.com/MwalaTimothy" target="_blank" class="btn btn-secondary">
+                <a href="https://github.com/MwalaTimothy" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     <i class="fab fa-github"></i> View All on GitHub
                 </a>
+            </div>
+
+            <!-- Top Case Studies -->
+            <div class="case-studies">
+                <p class="section-kicker">Selected engineering proof</p>
+                <h3 class="section-subtitle">Case studies that show how I think, build, and lead</h3>
+                <div class="case-grid">
+                    <article class="case-card">
+                        <span class="case-label">Radar sensing</span>
+                        <h4>LD2410 Radar Zone Detector</h4>
+                        <p><strong>Problem:</strong> Reliable presence detection in noisy environments.</p>
+                        <p><strong>Build:</strong> Custom signal-processing firmware on ESP32 with WLED feedback and OLED UX.</p>
+                        <p><strong>Outcome:</strong> Low-latency zone detection for smart occupancy and quick deployment.</p>
+                        <a href="https://github.com/MwalaTimothy/LD2410_Radar_Zone-Detection" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Repo</a>
+                    </article>
+
+                    <article class="case-card">
+                        <span class="case-label">BLE and MQTT</span>
+                        <h4>ESP32-C3 iBeacon Gateway</h4>
+                        <p><strong>Problem:</strong> Collect and relay proximity data from iBeacons.</p>
+                        <p><strong>Build:</strong> BLE frame parsing on ESP32-C3 with MQTT relay and low-power design.</p>
+                        <p><strong>Outcome:</strong> Robust proximity monitoring for indoor tracking and analytics.</p>
+                        <a href="https://github.com/MwalaTimothy/esp32c3-ibeacon-gateway" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Repo</a>
+                    </article>
+
+                    <article class="case-card">
+                        <span class="case-label">Edge AI</span>
+                        <h4>DHT22 AI Data Logger</h4>
+                        <p><strong>Problem:</strong> Turn raw environmental readings into actionable insights.</p>
+                        <p><strong>Build:</strong> Multi-sensor calibration, edge preprocessing, and lightweight AI analysis.</p>
+                        <p><strong>Outcome:</strong> Cleaner datasets and automated alerts for environmental anomalies.</p>
+                        <a href="https://github.com/MwalaTimothy/DHT22-Wi-Fi-Data-Logger-with-AI-Insights" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Repo</a>
+                    </article>
+                </div>
             </div>
             <div class="projects-grid">
                 <!-- Featured Projects Row 1 -->
                 <div class="project-card featured-project">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/1e293b/64748b?text=Radar+Zone+Detection" alt="LD2410 Radar Zone Detection">
+                        <picture>
+                                <source type="image/webp" srcset="images/ld2410.webp">
+                                <img src="images/ld2410.webp" alt="LD2410 Radar Zone Detection" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/LD2410_Radar_Zone-Detection" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/LD2410_Radar_Zone-Detection" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -687,10 +739,13 @@
 
                 <div class="project-card featured-project">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/2563eb/ffffff?text=ESP32-C3+iBeacon+Gateway" alt="ESP32-C3 iBeacon Gateway">
+                        <picture>
+                            <source type="image/webp" srcset="images/esp32c3.webp">
+                            <img src="images/esp32c3.webp" alt="ESP32-C3 iBeacon Gateway" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/esp32c3-ibeacon-gateway" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/esp32c3-ibeacon-gateway" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -713,10 +768,13 @@
 
                 <div class="project-card featured-project">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/1e293b/64748b?text=ESP+IoT+Sensors" alt="ESP IoT Sensors">
+                        <picture>
+                            <source type="image/webp" srcset="images/espiot.webp">
+                            <img src="images/espiot.webp" alt="ESP IoT Sensors" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/ESP-IoT-Sensors" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/ESP-IoT-Sensors" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -739,10 +797,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/1e293b/64748b?text=DHT22+AI+Logger" alt="DHT22 AI Logger">
+                        <picture>
+                            <source type="image/webp" srcset="images/dht22.webp">
+                            <img src="images/dht22.webp" alt="DHT22 AI Logger" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/DHT22-Wi-Fi-Data-Logger-with-AI-Insights" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/DHT22-Wi-Fi-Data-Logger-with-AI-Insights" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -766,10 +827,13 @@
                 <!-- Featured Projects Row 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/1e293b/64748b?text=YouTube+Stats" alt="YouTube Channel Statistics">
+                        <picture>
+                            <source type="image/webp" srcset="images/youtube.webp">
+                            <img src="images/youtube.webp" alt="YouTube Channel Statistics" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/YOUTUBE_CHANNEL_STATISTIC" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/YOUTUBE_CHANNEL_STATISTIC" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -792,10 +856,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/1e293b/64748b?text=WiFi+Signal+Meter" alt="Wi-Fi Signal Meter">
+                        <picture>
+                            <source type="image/webp" srcset="images/wifi.webp">
+                            <img src="images/wifi.webp" alt="Wi-Fi Signal Meter" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/Wi-Fi-Signal-strength-Meter" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/Wi-Fi-Signal-strength-Meter" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -818,10 +885,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/1e293b/64748b?text=Weather+Display" alt="Weather Display">
+                        <picture>
+                            <source type="image/webp" srcset="images/weather.webp">
+                            <img src="images/weather.webp" alt="Weather Display" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/Weather-Display-with-ESP32-and-OLED" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/Weather-Display-with-ESP32-and-OLED" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -845,10 +915,13 @@
                 <!-- Additional Projects Row 3 -->
                 <div class="project-card featured-project">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/059669/ffffff?text=Carenuity+SQ-Panel" alt="Carenuity SQ-Panel Integration">
+                        <picture>
+                            <source type="image/webp" srcset="images/carenuity.webp">
+                            <img src="images/carenuity.webp" alt="Carenuity SQ-Panel Integration" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://solutions.carenuity.com/developers/f3044862-60f1-7098-edf6-f3a24c72079c" class="project-link" target="_blank">
+                                <a href="https://solutions.carenuity.com/developers/f3044862-60f1-7098-edf6-f3a24c72079c" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -871,10 +944,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/1e293b/64748b?text=GPIO+Viewer+OLED" alt="GPIO Viewer OLED">
+                        <picture>
+                            <source type="image/webp" srcset="images/gpio.webp">
+                            <img src="images/gpio.webp" alt="GPIO Viewer OLED" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/GPIO-VIEWER-OLED-DISPLAY" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/GPIO-VIEWER-OLED-DISPLAY" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -897,10 +973,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/1e293b/64748b?text=Environmental+Sensors" alt="Environmental Sensors">
+                        <picture>
+                            <source type="image/webp" srcset="images/env.webp">
+                            <img src="images/env.webp" alt="Environmental Sensors" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/MwalaTimothy/ESP32-8266_Microcontrolers_Sensors_Actuator" class="project-link" target="_blank">
+                                <a href="https://github.com/MwalaTimothy/ESP32-8266_Microcontrolers_Sensors_Actuator" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -924,10 +1003,13 @@
                 <!-- Additional Hackster Projects Row 4 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/059669/ffffff?text=Smart+Environment+Monitor+SHT40" alt="Smart Environment Monitor SHT40">
+                        <picture>
+                            <source type="image/webp" srcset="images/sht40.webp">
+                            <img src="images/sht40.webp" alt="Smart Environment Monitor SHT40" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://www.hackster.io/Mwala/build-a-smart-environ-monitor-using-sensirion-sht40-sensor-e8e28f" class="project-link" target="_blank">
+                                <a href="https://www.hackster.io/Mwala/build-a-smart-environ-monitor-using-sensirion-sht40-sensor-e8e28f" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -950,10 +1032,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/059669/ffffff?text=MICS-6814+Gas+Sensor" alt="MICS-6814 Multi-Gas Sensor">
+                        <picture>
+                            <source type="image/webp" srcset="images/mics6814.webp">
+                            <img src="images/mics6814.webp" alt="MICS-6814 Multi-Gas Sensor" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://www.hackster.io/Mwala/interfacing-mics-6814-multi-gas-sensor-with-esp32-c3-mini-c69254" class="project-link" target="_blank">
+                                <a href="https://www.hackster.io/Mwala/interfacing-mics-6814-multi-gas-sensor-with-esp32-c3-mini-c69254" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -976,10 +1061,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/059669/ffffff?text=GPT3.5+Environmental+AI" alt="GPT3.5 Environmental Monitor">
+                        <picture>
+                            <source type="image/webp" srcset="images/gpt35.webp">
+                            <img src="images/gpt35.webp" alt="GPT3.5 Environmental Monitor" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://www.hackster.io/Mwala/smart-environmental-monitor-with-gpt3-5-ai-powered-insights-ceba5a" class="project-link" target="_blank">
+                                <a href="https://www.hackster.io/Mwala/smart-environmental-monitor-with-gpt3-5-ai-powered-insights-ceba5a" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -1002,10 +1090,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/059669/ffffff?text=Auto+Discoverable+Air+Quality" alt="Auto-Discoverable Air Quality Meter">
+                        <picture>
+                            <source type="image/webp" srcset="images/autodiscover.webp">
+                            <img src="images/autodiscover.webp" alt="Auto-Discoverable Air Quality Meter" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://www.hackster.io/Mwala/auto-discoverable-air-quality-meter-hassle-free-integration-2c7b8c" class="project-link" target="_blank">
+                                <a href="https://www.hackster.io/Mwala/auto-discoverable-air-quality-meter-hassle-free-integration-2c7b8c" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -1028,10 +1119,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/059669/ffffff?text=LD2410C+3Min+Build" alt="LD2410C 3-Minute Zone Detector">
+                        <picture>
+                            <source type="image/webp" srcset="images/ld2410c3min.webp">
+                            <img src="images/ld2410c3min.webp" alt="LD2410C 3-Minute Zone Detector" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://www.hackster.io/Mwala/build-your-own-zone-detector-with-ld2410c-radar-in-3-minutes-60764b" class="project-link" target="_blank">
+                                <a href="https://www.hackster.io/Mwala/build-your-own-zone-detector-with-ld2410c-radar-in-3-minutes-60764b" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -1054,10 +1148,13 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x300/059669/ffffff?text=DIY+Weather+Station" alt="DIY Weather Station">
+                        <picture>
+                            <source type="image/webp" srcset="images/diyweather.webp">
+                            <img src="images/diyweather.webp" alt="DIY Weather Station" width="600" height="300" loading="lazy">
+                        </picture>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://www.hackster.io/Mwala/sense-your-surroundings-easy-diy-weather-station-f77fc4" class="project-link" target="_blank">
+                                <a href="https://www.hackster.io/Mwala/sense-your-surroundings-easy-diy-weather-station-f77fc4" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -1103,7 +1200,7 @@
                         <span class="stat-label">Total Views</span>
                     </div>
                 </div>
-                <a href="https://www.hackster.io/Mwala" class="btn btn-primary" target="_blank">
+                <a href="https://www.hackster.io/Mwala" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-external-link-alt"></i> View Full Portfolio
                 </a>
             </div>
@@ -1191,7 +1288,7 @@
                         <span>mwalatimo@gmail.com</span>
                     </div>
                     <div class="contact-item">
-                        <a href="https://wa.me/254715326414" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://wa.me/254715326414" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <i class="fab fa-whatsapp"></i>
                             <span>WhatsApp: +254715326414</span>
                         </a>
@@ -1206,19 +1303,19 @@
                     </div>
                 </div>
                 <div class="platform-links">
-                    <a href="https://github.com/MwalaTimothy" class="platform-link" target="_blank">
+                    <a href="https://github.com/MwalaTimothy" class="platform-link" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://www.youtube.com/@Smartsyncinnovations" class="platform-link" target="_blank">
+                    <a href="https://www.youtube.com/@Smartsyncinnovations" class="platform-link" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-youtube"></i> YouTube Channel
                     </a>
-                    <a href="https://www.hackster.io/Mwala" class="platform-link" target="_blank">
+                    <a href="https://www.hackster.io/Mwala" class="platform-link" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-microchip"></i> Hackster.io
                     </a>
-                    <a href="https://www.linkedin.com/in/timothy-mwala/" class="platform-link" target="_blank">
+                    <a href="https://www.linkedin.com/in/timothy-mwala/" class="platform-link" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://solutions.carenuity.com/developers/f3044862-60f1-7098-edf6-f3a24c72079c" class="platform-link" target="_blank">
+                    <a href="https://solutions.carenuity.com/developers/f3044862-60f1-7098-edf6-f3a24c72079c" class="platform-link" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-globe"></i> Carenuity
                     </a>
                 </div>
@@ -1226,13 +1323,88 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact career-contact">
+        <div class="container">
+            <div class="contact-shell">
+                <div class="contact-info">
+                    <p class="section-kicker">Professional contact</p>
+                    <h2>Let us build something dependable.</h2>
+                    <p>
+                        For embedded systems roles, IoT product work, sensor integration, edge AI prototypes,
+                        technical content, or collaboration with ChipGlobe KE, send a concise brief and your
+                        email client will open with the message ready to review.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>mwalatimo@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-building"></i>
+                            <span>Team Lead - ChipGlobe KE</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mombasa, Kenya</span>
+                        </div>
+                    </div>
+                    <div class="platform-links contact-platforms">
+                        <a href="https://github.com/MwalaTimothy" class="platform-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/timothy-mwala/" class="platform-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.hackster.io/Mwala" class="platform-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-microchip"></i> Hackster
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form email-contact-form" data-recipient="mwalatimo@gmail.com">
+                    <div class="form-group">
+                        <input id="name" name="name" type="text" placeholder=" " autocomplete="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="email" name="email" type="email" placeholder=" " autocomplete="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="subject" name="subject" type="text" placeholder=" " value="Embedded systems collaboration" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="7" placeholder=" " required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Open Email Draft</button>
+                    <p class="form-note">This form opens your email app. No message is sent until you press send there.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Timothy Mwala. All rights reserved. | Built with ❤️ for the IoT & AI community</p>
+            <p>&copy; 2026 Timothy Mwala. Embedded systems, edge AI, and IoT portfolio.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Cookie / Analytics Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="cookie-copy">
+            This site uses analytics to improve performance. By accepting you consent to loading Google Analytics. You can also continue without accepting.
+        </div>
+        <div class="cookie-actions">
+            <button id="accept-analytics" class="btn btn-primary">Accept</button>
+            <button id="decline-analytics" class="btn btn-secondary">Decline</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
