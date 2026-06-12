@@ -118,49 +118,7 @@ if (contactForm) {
     });
 }
 
-function loadGoogleAnalytics() {
-    if (window.gaLoaded) return;
-
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-49FV02S1M5';
-    document.head.appendChild(script);
-
-    script.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function gtag() {
-            window.dataLayer.push(arguments);
-        };
-        window.gtag('js', new Date());
-        window.gtag('config', 'G-49FV02S1M5');
-        window.gaLoaded = true;
-    };
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    const consentBanner = document.getElementById('cookie-consent');
-    const acceptBtn = document.getElementById('accept-analytics');
-    const declineBtn = document.getElementById('decline-analytics');
-    const consent = localStorage.getItem('analytics_consent');
-
-    if (consentBanner && consent) consentBanner.hidden = true;
-    if (consent === 'granted') loadGoogleAnalytics();
-
-    if (acceptBtn) {
-        acceptBtn.addEventListener('click', () => {
-            localStorage.setItem('analytics_consent', 'granted');
-            loadGoogleAnalytics();
-            if (consentBanner) consentBanner.hidden = true;
-        });
-    }
-
-    if (declineBtn) {
-        declineBtn.addEventListener('click', () => {
-            localStorage.setItem('analytics_consent', 'denied');
-            if (consentBanner) consentBanner.hidden = true;
-        });
-    }
-
     if (!prefersReducedMotion) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
