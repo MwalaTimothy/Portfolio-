@@ -1,14 +1,9 @@
-name: 🔒 Deploy Portfolio (Source Private, Main Public)
+name: � Deploy Portfolio
 
 on:
   push:
-    branches: [ source ]  # Deploy when source branch is updated
+    branches: [ source ]
   workflow_dispatch:
-    inputs:
-      deploy_branch:
-        description: 'Branch to deploy from'
-        default: 'source'
-        required: true
 
 permissions:
   contents: read
@@ -20,187 +15,158 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
-    name: 🚀 Build from Source Branch & Deploy
+  deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
-    - name: 📥 Checkout Source Branch (Private)
-      uses: actions/checkout@v4
-      with:
-        ref: source  # Always checkout the source branch where HTML/CSS/JS live
-        fetch-depth: 0
+      - name: 📥 Checkout Source Branch
+        uses: actions/checkout@v4
+        with:
+          ref: source
+          fetch-depth: 0
 
-    - name: 🛠️ Setup Build Environment
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
+      - name: 🛠️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-    - name: ⚙️ Configure GitHub Pages
-      uses: actions/configure-pages@v4
+      - name: 🏗️ Create Build Directory
+        run: |
+          mkdir -p _site
+          echo "✅ Build directory created"
 
-    - name: 🏗️ Create Public Build Directory
-      run: |
-        mkdir -p _site
-        echo "🔐 Building from private source branch..."
-        echo "📂 Source files location: source branch (private)"
-        echo "📊 Public deployment: main branch (README only)"
-        
-    - name: 🎨 Process Source Files (Clean & Minify)
-      run: |
-        # Verify source files exist
-        if [ ! -f "index.html" ]; then
-          echo "❌ Error: index.html not found in source branch"
-          exit 1
-        fi
-        
-        echo "✅ Source files found in source branch"
-        echo "🧹 Processing HTML..."
-        # Remove development comments and clean HTML
-        sed '/<!--.*DEV.*-->/d; /<!--.*DEBUG.*-->/d; /<!--.*TODO.*-->/d' index.html > _site/index.html
-        
-        echo "🎨 Processing CSS..."
-        # Remove source maps and development comments from CSS
-        sed '/\/\*.*DEV.*\*\//d; /\/\*.*DEBUG.*\*\//d; /sourceMappingURL/d' styles.css > _site/styles.css
-        
-        echo "⚡ Processing JavaScript..."
-        # Remove console.log, debug statements, and dev comments
-        sed '/console\.log/d; /\/\/.*DEV/d; /\/\/.*DEBUG/d; /debugger;/d' script.js > _site/script.js
-        
-        echo "✨ Source processing complete!"
-        # Copy images folder into deployment site
-        if [ -d "images" ]; then
-          cp -R images _site/images
-          echo "✅ Copied images to _site/images"
-        fi
-        
-    - name: 📝 Generate Production Assets
-      run: |
-        # Create production 404 page
-        cat > _site/404.html << 'EOF'
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>404 - Timothy Mwala Portfolio</title>
-            <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-            <style>
-                * { margin: 0; padding: 0; box-sizing: border-box; }
-                body { 
-                    font-family: 'Segoe UI', sans-serif; 
-                    background: linear-gradient(135deg, #1e293b 0%, #334155 100%); 
-                    color: white; 
-                    min-height: 100vh; 
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center;
-                }
-                .container { text-align: center; padding: 2rem; }
-                h1 { font-size: 4rem; color: #3b82f6; margin-bottom: 1rem; }
-                p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
-                .btn { 
-                    display: inline-block; 
-                    padding: 12px 24px; 
-                    background: #3b82f6; 
-                    color: white; 
-                    text-decoration: none; 
-                    border-radius: 8px; 
-                    transition: all 0.3s;
-                }
-                .btn:hover { background: #2563eb; transform: translateY(-2px); }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <h1>404</h1>
-                <p>Page not found. Return to Timothy's Portfolio</p>
-                <a href="/" class="btn">🏠 Portfolio Home</a>
-            </div>
-        </body>
-        </html>
-        EOF
-        
-        # Create robots.txt (hide source branch info)
-        cat > _site/robots.txt << 'EOF'
-        User-agent: *
-        Allow: /
-        
-        # SEO
-        Sitemap: https://mwalatimothy.github.io/Portfolio-/sitemap.xml
-        
-        # Privacy: Hide source files
-        Disallow: /source/
-        Disallow: /*.md$
-        EOF
-        
-        # Create sitemap
-        cat > _site/sitemap.xml << EOF
-        <?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-          <url>
-            <loc>https://mwalatimothy.github.io/Portfolio-/</loc>
-            <lastmod>$(date -u +%Y-%m-%dT%H:%M:%SZ)</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-          </url>
-        </urlset>
-        EOF
+      - name: 🎨 Process Source Files
+        run: |
+          # Verify source files exist
+          if [ ! -f "index.html" ]; then
+            echo "❌ Error: index.html not found"
+            exit 1
+          fi
 
-    - name: 🔍 Verify Privacy Protection
-      run: |
-        echo "🛡️ Privacy Protection Verification:"
-        echo "=================================="
-        echo "✅ Source files built from: source branch (private)"
-        echo "✅ Deployment branch: main (README only)"
-        echo "✅ Public files count: $(find _site -type f | wc -l)"
-        echo "📄 HTML files: $(find _site -name "*.html" | wc -l)"
-        echo "🎨 CSS files: $(find _site -name "*.css" | wc -l)"  
-        echo "⚡ JS files: $(find _site -name "*.js" | wc -l)"
-        echo ""
-        echo "🔒 Privacy Status:"
-        echo "❌ No source .md files in deployment: $(find _site -name "*.md" | wc -l)"
-        echo "❌ No .github directory in deployment: $(find _site -name ".github" | wc -l)"
-        echo ""
-        echo "🎯 Result: Source code private, portfolio public!"
+          # Copy and clean HTML
+          cp index.html _site/index.html
+          sed -i '/<!--.*DEV.*-->/d; /<!--.*DEBUG.*-->/d; /<!--.*TODO.*-->/d' _site/index.html
 
-    - name: 🔬 Run Lighthouse Audit (local)
-      run: |
-        echo "Starting local static server and running Lighthouse..."
-        # install a lightweight static server
-        npm install -g http-server lighthouse || true
-        # start server in background
-        nohup http-server _site -p 8080 >/tmp/http-server.log 2>&1 &
-        # wait for server
-        for i in {1..10}; do curl -sSf http://127.0.0.1:8080 && break || sleep 1; done
-        # run lighthouse (no-sandbox is required on some runners)
-        npx lighthouse http://127.0.0.1:8080 --chrome-flags="--no-sandbox" --output html --output-path=_site/lighthouse-report.html || true
-        echo "Lighthouse audit finished, report at _site/lighthouse-report.html"
+          # Copy and clean CSS
+          cp styles.css _site/styles.css
+          sed -i '/\/\*.*DEV.*\*\//d; /\/\*.*DEBUG.*\*\//d; /sourceMappingURL/d' _site/styles.css
 
-    - name: 📦 Upload Deployment Artifact  
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./_site
-        retention-days: 7
+          # Copy and clean JavaScript
+          cp script.js _site/script.js
+          sed -i '/console\.log/d; /\/\/.*DEV/d; /\/\/.*DEBUG/d; /debugger;/d' _site/script.js
 
-    - name: 🔍 Debug Artifact Upload
-      run: |
-        echo "Artifact uploaded successfully"
-        ls -lah _site | head -20
-        echo "Total files: $(find _site -type f | wc -l)"
+          echo "✅ Source files processed"
 
-    - name: 🌐 Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-      
-    - name: ✅ Deployment Success
-      run: |
-        echo "🎉 Portfolio successfully deployed!"
-        echo "🔗 Live URL: ${{ steps.deployment.outputs.page_url }}"
-        echo ""
-        echo "🔒 Privacy Protection Active:"
-        echo "   • Main branch: README only (public)"
-        echo "   • Source branch: HTML/CSS/JS (private)" 
-        echo "   • Deployment: Clean build (no source exposure)"
-        echo ""
-        echo "✨ Your portfolio is live with complete source privacy!"
+      - name: 📁 Copy Images to Build
+        run: |
+          if [ -d "images" ]; then
+            cp -R images _site/images
+            echo "✅ Images copied to build directory"
+            echo "📊 Image count: $(find _site/images -type f | wc -l)"
+          else
+            echo "⚠️ No images directory found"
+          fi
+
+      - name: 📝 Generate Production Assets
+        run: |
+          # 404 Page
+          cat > _site/404.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>404 - Timothy Mwala Portfolio</title>
+              <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+              <style>
+                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                  body { 
+                      font-family: 'Segoe UI', sans-serif; 
+                      background: linear-gradient(135deg, #1e293b 0%, #334155 100%); 
+                      color: white; 
+                      min-height: 100vh; 
+                      display: flex; 
+                      align-items: center; 
+                      justify-content: center;
+                  }
+                  .container { text-align: center; padding: 2rem; }
+                  h1 { font-size: 4rem; color: #3b82f6; margin-bottom: 1rem; }
+                  p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+                  .btn { 
+                      display: inline-block; 
+                      padding: 12px 24px; 
+                      background: #3b82f6; 
+                      color: white; 
+                      text-decoration: none; 
+                      border-radius: 8px; 
+                      transition: all 0.3s;
+                  }
+                  .btn:hover { background: #2563eb; transform: translateY(-2px); }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>404</h1>
+                  <p>Page not found. Return to Timothy's Portfolio</p>
+                  <a href="/" class="btn">🏠 Portfolio Home</a>
+              </div>
+          </body>
+          </html>
+          EOF
+
+          # Robots.txt
+          cat > _site/robots.txt << 'EOF'
+          User-agent: *
+          Allow: /
+          Sitemap: https://mwalatimothy.github.io/Portfolio-/sitemap.xml
+          EOF
+
+          # Sitemap
+          cat > _site/sitemap.xml << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://mwalatimothy.github.io/Portfolio-/</loc>
+              <lastmod>$(date -u +%Y-%m-%dT%H:%M:%SZ)</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          </urlset>
+          EOF
+
+          echo "✅ Production assets generated"
+
+      - name: 📊 Verify Build Directory
+        run: |
+          echo "📂 Build directory contents:"
+          echo "=========================="
+          echo "Total files: $(find _site -type f | wc -l)"
+          echo "HTML files: $(find _site -name "*.html" | wc -l)"
+          echo "CSS files: $(find _site -name "*.css" | wc -l)"
+          echo "JS files: $(find _site -name "*.js" | wc -l)"
+          echo "Image files: $(find _site/images -type f 2>/dev/null | wc -l)"
+          echo ""
+          echo "🔍 Top-level files in _site:"
+          ls -lh _site/ | grep -v "^total" | awk '{print $9, "(" $5 ")"}'
+
+      - name: ⚙️ Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: 📦 Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+          retention-days: 7
+
+      - name: 🌐 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: ✅ Deployment Complete
+        run: |
+          echo "🎉 Portfolio deployed successfully!"
+          echo "🔗 URL: ${{ steps.deployment.outputs.page_url }}"
