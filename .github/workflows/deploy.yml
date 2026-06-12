@@ -181,11 +181,17 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./_site
-        retention-days: 1
+        retention-days: 7
+
+    - name: 🔍 Debug Artifact Upload
+      run: |
+        echo "Artifact uploaded successfully"
+        ls -lah _site | head -20
+        echo "Total files: $(find _site -type f | wc -l)"
 
     - name: 🌐 Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v1
+      uses: actions/deploy-pages@v4
       
     - name: ✅ Deployment Success
       run: |
