@@ -26,11 +26,6 @@ jobs:
           ref: source
           fetch-depth: 0
 
-      - name: 🛠️ Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
       - name: 🏗️ Create Build Directory
         run: |
           mkdir -p _site
@@ -68,52 +63,10 @@ jobs:
             echo "⚠️ No images directory found"
           fi
 
-      - name: 📝 Generate Production Assets
+      - name: 📝 Copy 404 Page and Generate Production Assets
         run: |
-          # 404 Page
-          cat > _site/404.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>404 - Timothy Mwala Portfolio</title>
-              <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-              <style>
-                  * { margin: 0; padding: 0; box-sizing: border-box; }
-                  body { 
-                      font-family: 'Segoe UI', sans-serif; 
-                      background: linear-gradient(135deg, #1e293b 0%, #334155 100%); 
-                      color: white; 
-                      min-height: 100vh; 
-                      display: flex; 
-                      align-items: center; 
-                      justify-content: center;
-                  }
-                  .container { text-align: center; padding: 2rem; }
-                  h1 { font-size: 4rem; color: #3b82f6; margin-bottom: 1rem; }
-                  p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
-                  .btn { 
-                      display: inline-block; 
-                      padding: 12px 24px; 
-                      background: #3b82f6; 
-                      color: white; 
-                      text-decoration: none; 
-                      border-radius: 8px; 
-                      transition: all 0.3s;
-                  }
-                  .btn:hover { background: #2563eb; transform: translateY(-2px); }
-              </style>
-          </head>
-          <body>
-              <div class="container">
-                  <h1>404</h1>
-                  <p>Page not found. Return to Timothy's Portfolio</p>
-                  <a href="/" class="btn">🏠 Portfolio Home</a>
-              </div>
-          </body>
-          </html>
-          EOF
+          # 404 Page (tracked in repo root)
+          cp 404.html _site/404.html
 
           # Robots.txt
           cat > _site/robots.txt << 'EOF'

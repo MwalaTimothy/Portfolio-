@@ -650,6 +650,15 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     transition: var(--transition);
     border-top: 4px solid #ff0000;
+    overflow: hidden;
+}
+
+.youtube-thumb {
+    display: block;
+    width: calc(100% + 5rem);
+    height: 160px;
+    object-fit: cover;
+    margin: -2.5rem -2.5rem 1.5rem;
 }
 
 .youtube-card:hover {
@@ -1366,6 +1375,15 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0.5rem;
 }
 
+.case-thumb {
+    display: block;
+    width: calc(100% + 2.8rem);
+    height: 140px;
+    object-fit: cover;
+    margin: -1.4rem -1.4rem 1rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
 .career-contact {
     background:
         linear-gradient(135deg, rgba(36, 87, 166, 0.08), rgba(183, 121, 31, 0.12)),
@@ -1836,6 +1854,16 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    overflow: hidden;
+}
+
+.hackster-thumb {
+    display: block;
+    width: calc(100% + 3rem);
+    height: 140px;
+    object-fit: cover;
+    margin: -1.5rem -1.5rem 1rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .hackster-project:hover {
